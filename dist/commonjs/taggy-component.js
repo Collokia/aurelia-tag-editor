@@ -7,7 +7,7 @@ exports.TaggyComponent = undefined;
 
 var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5;
 
-var _taggy = require('taggy');
+var _taggy = require('./taggy');
 
 var _taggy2 = _interopRequireDefault(_taggy);
 

@@ -1,4 +1,4 @@
-import taggy from "taggy";
+import taggy from "./taggy";
 import {bindable,useView} from 'aurelia-framework';
 import {EventAggregator} from 'aurelia-event-aggregator';
 

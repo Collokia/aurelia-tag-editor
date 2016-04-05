@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['taggy', 'aurelia-framework', 'aurelia-event-aggregator'], function (_export, _context) {
+System.register(['./taggy', 'aurelia-framework', 'aurelia-event-aggregator'], function (_export, _context) {
   var taggy, bindable, useView, EventAggregator, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, TaggyComponent;
 
   function _initDefineProp(target, property, descriptor, context) {
