@@ -5,7 +5,6 @@ import {EventAggregator} from 'aurelia-event-aggregator';
 export class TaggyComponent {
   @bindable ceId;
   @bindable eventChannel;
-  @bindable minChars;
   @bindable placeholder;
   @bindable free;
   @bindable deletion;
@@ -41,16 +40,15 @@ export class TaggyComponent {
        deletion: this.deletion,
        ceId: this.ceId,
        eventChannel: this.eventChannel,
-       minChars:minChars,
-       placeholder:placeholder,
-       free: free,
-       delimiter: delimiter,
-       preventInvalid: preventInvalid,
-       validate: validate,
-       render:render,
-       convertOnBlur:convertOnBlur,
-       parseText:parseText,
-       autocomplete:autocomplete
+       placeholder:this.placeholder,
+       free: this.free,
+       delimiter: this.delimiter,
+       preventInvalid: this.preventInvalid,
+       validate: this.validate,
+       render:this.render,
+       convertOnBlur:this.convertOnBlur,
+       parseText:this.parseText,
+       autocomplete:this.autocomplete
     });
     this.taggyElement.on("add", (item) => {this.onSelectedTokensChange()});
     this.taggyElement.on("remove", (item) => {this.onSelectedTokensChange()});
