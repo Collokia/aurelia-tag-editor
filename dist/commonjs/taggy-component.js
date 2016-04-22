@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.TaggyComponent = undefined;
 
-var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5;
+var _dec, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13;
 
 var _taggy = require('./taggy');
 
@@ -62,7 +62,10 @@ function _initializerWarningHelper(descriptor, context) {
   throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-var TaggyComponent = exports.TaggyComponent = (_class = function () {
+var TaggyComponent = exports.TaggyComponent = (_dec = processContent(function (viewCompiler, viewResources, element, instruction) {
+  instruction.autocomplete = processAutoComplete(element);
+  return true;
+}), (_class = function () {
   TaggyComponent.inject = function inject() {
     return [_aureliaEventAggregator.EventAggregator];
   };
@@ -76,9 +79,25 @@ var TaggyComponent = exports.TaggyComponent = (_class = function () {
 
     _initDefineProp(this, 'minChars', _descriptor3, this);
 
-    _initDefineProp(this, 'api', _descriptor4, this);
+    _initDefineProp(this, 'placeholder', _descriptor4, this);
 
-    _initDefineProp(this, 'placeholder', _descriptor5, this);
+    _initDefineProp(this, 'free', _descriptor5, this);
+
+    _initDefineProp(this, 'deletion', _descriptor6, this);
+
+    _initDefineProp(this, 'delimiter', _descriptor7, this);
+
+    _initDefineProp(this, 'preventInvalid', _descriptor8, this);
+
+    _initDefineProp(this, 'validate', _descriptor9, this);
+
+    _initDefineProp(this, 'render', _descriptor10, this);
+
+    _initDefineProp(this, 'convertOnBlur', _descriptor11, this);
+
+    _initDefineProp(this, 'parseText', _descriptor12, this);
+
+    _initDefineProp(this, 'autocomplete', _descriptor13, this);
 
     this.ea = ea;
     this.selectedTokens = "";
@@ -95,13 +114,19 @@ var TaggyComponent = exports.TaggyComponent = (_class = function () {
     var _this = this;
 
     this.taggyElement = (0, _taggy2.default)(document.querySelector("#" + this.ceId), {
-      deletion: true,
-      parseText: 'name',
-      autocomplete: {
-        noMatches: 'No results found.',
-        suggestions: this.api
-      },
-      free: false
+      deletion: this.deletion,
+      ceId: this.ceId,
+      eventChannel: this.eventChannel,
+      minChars: minChars,
+      placeholder: placeholder,
+      free: free,
+      delimiter: delimiter,
+      preventInvalid: preventInvalid,
+      validate: validate,
+      render: render,
+      convertOnBlur: convertOnBlur,
+      parseText: parseText,
+      autocomplete: autocomplete
     });
     this.taggyElement.on("add", function (item) {
       _this.onSelectedTokensChange();
@@ -125,10 +150,34 @@ var TaggyComponent = exports.TaggyComponent = (_class = function () {
 }), _descriptor3 = _applyDecoratedDescriptor(_class.prototype, 'minChars', [_aureliaFramework.bindable], {
   enumerable: true,
   initializer: null
-}), _descriptor4 = _applyDecoratedDescriptor(_class.prototype, 'api', [_aureliaFramework.bindable], {
+}), _descriptor4 = _applyDecoratedDescriptor(_class.prototype, 'placeholder', [_aureliaFramework.bindable], {
   enumerable: true,
   initializer: null
-}), _descriptor5 = _applyDecoratedDescriptor(_class.prototype, 'placeholder', [_aureliaFramework.bindable], {
+}), _descriptor5 = _applyDecoratedDescriptor(_class.prototype, 'free', [_aureliaFramework.bindable], {
   enumerable: true,
   initializer: null
-})), _class);
+}), _descriptor6 = _applyDecoratedDescriptor(_class.prototype, 'deletion', [_aureliaFramework.bindable], {
+  enumerable: true,
+  initializer: null
+}), _descriptor7 = _applyDecoratedDescriptor(_class.prototype, 'delimiter', [_aureliaFramework.bindable], {
+  enumerable: true,
+  initializer: null
+}), _descriptor8 = _applyDecoratedDescriptor(_class.prototype, 'preventInvalid', [_aureliaFramework.bindable], {
+  enumerable: true,
+  initializer: null
+}), _descriptor9 = _applyDecoratedDescriptor(_class.prototype, 'validate', [_aureliaFramework.bindable], {
+  enumerable: true,
+  initializer: null
+}), _descriptor10 = _applyDecoratedDescriptor(_class.prototype, 'render', [_aureliaFramework.bindable], {
+  enumerable: true,
+  initializer: null
+}), _descriptor11 = _applyDecoratedDescriptor(_class.prototype, 'convertOnBlur', [_aureliaFramework.bindable], {
+  enumerable: true,
+  initializer: null
+}), _descriptor12 = _applyDecoratedDescriptor(_class.prototype, 'parseText', [_aureliaFramework.bindable], {
+  enumerable: true,
+  initializer: null
+}), _descriptor13 = _applyDecoratedDescriptor(_class.prototype, 'autocomplete', [_aureliaFramework.bindable], {
+  enumerable: true,
+  initializer: null
+}), _applyDecoratedDescriptor(_class, 'inject', [_dec], Object.getOwnPropertyDescriptor(_class, 'inject'), _class)), _class));
