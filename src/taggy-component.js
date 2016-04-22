@@ -13,6 +13,7 @@ export class TaggyComponent {
   @bindable validate;
   @bindable render;
   @bindable convertOnBlur;
+  @bindable parseValue;
   @bindable parseText;
   @bindable autocomplete;
 
@@ -48,6 +49,7 @@ export class TaggyComponent {
        render:this.render,
        convertOnBlur:this.convertOnBlur,
        parseText:this.parseText,
+       parseValue:this.parseValue,
        autocomplete:this.autocomplete
     });
     this.taggyElement.on("add", (item) => {this.onSelectedTokensChange()});

@@ -1,4 +1,4 @@
-var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12;
+var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13;
 
 function _initDefineProp(target, property, descriptor, context) {
   if (!descriptor) return;
@@ -73,9 +73,11 @@ export let TaggyComponent = (_class = class TaggyComponent {
 
     _initDefineProp(this, 'convertOnBlur', _descriptor10, this);
 
-    _initDefineProp(this, 'parseText', _descriptor11, this);
+    _initDefineProp(this, 'parseValue', _descriptor11, this);
 
-    _initDefineProp(this, 'autocomplete', _descriptor12, this);
+    _initDefineProp(this, 'parseText', _descriptor12, this);
+
+    _initDefineProp(this, 'autocomplete', _descriptor13, this);
 
     this.ea = ea;
     this.selectedTokens = "";
@@ -101,6 +103,7 @@ export let TaggyComponent = (_class = class TaggyComponent {
       render: this.render,
       convertOnBlur: this.convertOnBlur,
       parseText: this.parseText,
+      parseValue: this.parseValue,
       autocomplete: this.autocomplete
     });
     this.taggyElement.on("add", item => {
@@ -144,10 +147,13 @@ export let TaggyComponent = (_class = class TaggyComponent {
 }), _descriptor10 = _applyDecoratedDescriptor(_class.prototype, 'convertOnBlur', [bindable], {
   enumerable: true,
   initializer: null
-}), _descriptor11 = _applyDecoratedDescriptor(_class.prototype, 'parseText', [bindable], {
+}), _descriptor11 = _applyDecoratedDescriptor(_class.prototype, 'parseValue', [bindable], {
   enumerable: true,
   initializer: null
-}), _descriptor12 = _applyDecoratedDescriptor(_class.prototype, 'autocomplete', [bindable], {
+}), _descriptor12 = _applyDecoratedDescriptor(_class.prototype, 'parseText', [bindable], {
+  enumerable: true,
+  initializer: null
+}), _descriptor13 = _applyDecoratedDescriptor(_class.prototype, 'autocomplete', [bindable], {
   enumerable: true,
   initializer: null
 })), _class);

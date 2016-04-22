@@ -63,7 +63,7 @@ define(['exports', './taggy', 'aurelia-framework', 'aurelia-event-aggregator'], 
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
   }
 
-  var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12;
+  var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13;
 
   var TaggyComponent = exports.TaggyComponent = (_class = function () {
     TaggyComponent.inject = function inject() {
@@ -93,9 +93,11 @@ define(['exports', './taggy', 'aurelia-framework', 'aurelia-event-aggregator'], 
 
       _initDefineProp(this, 'convertOnBlur', _descriptor10, this);
 
-      _initDefineProp(this, 'parseText', _descriptor11, this);
+      _initDefineProp(this, 'parseValue', _descriptor11, this);
 
-      _initDefineProp(this, 'autocomplete', _descriptor12, this);
+      _initDefineProp(this, 'parseText', _descriptor12, this);
+
+      _initDefineProp(this, 'autocomplete', _descriptor13, this);
 
       this.ea = ea;
       this.selectedTokens = "";
@@ -123,6 +125,7 @@ define(['exports', './taggy', 'aurelia-framework', 'aurelia-event-aggregator'], 
         render: this.render,
         convertOnBlur: this.convertOnBlur,
         parseText: this.parseText,
+        parseValue: this.parseValue,
         autocomplete: this.autocomplete
       });
       this.taggyElement.on("add", function (item) {
@@ -168,10 +171,13 @@ define(['exports', './taggy', 'aurelia-framework', 'aurelia-event-aggregator'], 
   }), _descriptor10 = _applyDecoratedDescriptor(_class.prototype, 'convertOnBlur', [_aureliaFramework.bindable], {
     enumerable: true,
     initializer: null
-  }), _descriptor11 = _applyDecoratedDescriptor(_class.prototype, 'parseText', [_aureliaFramework.bindable], {
+  }), _descriptor11 = _applyDecoratedDescriptor(_class.prototype, 'parseValue', [_aureliaFramework.bindable], {
     enumerable: true,
     initializer: null
-  }), _descriptor12 = _applyDecoratedDescriptor(_class.prototype, 'autocomplete', [_aureliaFramework.bindable], {
+  }), _descriptor12 = _applyDecoratedDescriptor(_class.prototype, 'parseText', [_aureliaFramework.bindable], {
+    enumerable: true,
+    initializer: null
+  }), _descriptor13 = _applyDecoratedDescriptor(_class.prototype, 'autocomplete', [_aureliaFramework.bindable], {
     enumerable: true,
     initializer: null
   })), _class);
