@@ -1,7 +1,7 @@
 'use strict';
 
 System.register(['./taggy', 'aurelia-framework', 'aurelia-event-aggregator'], function (_export, _context) {
-  var taggy, bindable, useView, EventAggregator, _dec, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, TaggyComponent;
+  var taggy, bindable, useView, EventAggregator, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, TaggyComponent;
 
   function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -62,10 +62,7 @@ System.register(['./taggy', 'aurelia-framework', 'aurelia-event-aggregator'], fu
       EventAggregator = _aureliaEventAggregator.EventAggregator;
     }],
     execute: function () {
-      _export('TaggyComponent', TaggyComponent = (_dec = processContent(function (viewCompiler, viewResources, element, instruction) {
-        instruction.autocomplete = processAutoComplete(element);
-        return true;
-      }), (_class = function () {
+      _export('TaggyComponent', TaggyComponent = (_class = function () {
         TaggyComponent.inject = function inject() {
           return [EventAggregator];
         };
@@ -180,7 +177,7 @@ System.register(['./taggy', 'aurelia-framework', 'aurelia-event-aggregator'], fu
       }), _descriptor13 = _applyDecoratedDescriptor(_class.prototype, 'autocomplete', [bindable], {
         enumerable: true,
         initializer: null
-      }), _applyDecoratedDescriptor(_class, 'inject', [_dec], Object.getOwnPropertyDescriptor(_class, 'inject'), _class)), _class)));
+      })), _class));
 
       _export('TaggyComponent', TaggyComponent);
     }

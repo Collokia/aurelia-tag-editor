@@ -1,4 +1,4 @@
-var _dec, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13;
+var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13;
 
 function _initDefineProp(target, property, descriptor, context) {
   if (!descriptor) return;
@@ -47,10 +47,7 @@ import taggy from "./taggy";
 import { bindable, useView } from 'aurelia-framework';
 import { EventAggregator } from 'aurelia-event-aggregator';
 
-export let TaggyComponent = (_dec = processContent(function (viewCompiler, viewResources, element, instruction) {
-  instruction.autocomplete = processAutoComplete(element);
-  return true;
-}), (_class = class TaggyComponent {
+export let TaggyComponent = (_class = class TaggyComponent {
 
   static inject() {
     return [EventAggregator];
@@ -159,4 +156,4 @@ export let TaggyComponent = (_dec = processContent(function (viewCompiler, viewR
 }), _descriptor13 = _applyDecoratedDescriptor(_class.prototype, 'autocomplete', [bindable], {
   enumerable: true,
   initializer: null
-}), _applyDecoratedDescriptor(_class, 'inject', [_dec], Object.getOwnPropertyDescriptor(_class, 'inject'), _class)), _class));
+})), _class);

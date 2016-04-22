@@ -17,10 +17,10 @@ export class TaggyComponent {
   @bindable parseText;
   @bindable autocomplete;
 
-  @processContent(function(viewCompiler, viewResources, element, instruction) {
-    instruction.autocomplete = processAutoComplete(element);
-    return true;
-  })
+  // @processContent(function(viewCompiler, viewResources, element, instruction) {
+  //   instruction.autocomplete = processAutoComplete(element);
+  //   return true;
+  // })
 
   static inject(){return [EventAggregator]}
   constructor(ea) {

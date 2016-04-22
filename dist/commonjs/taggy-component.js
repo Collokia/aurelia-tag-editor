@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.TaggyComponent = undefined;
 
-var _dec, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13;
+var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13;
 
 var _taggy = require('./taggy');
 
@@ -62,10 +62,7 @@ function _initializerWarningHelper(descriptor, context) {
   throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-var TaggyComponent = exports.TaggyComponent = (_dec = processContent(function (viewCompiler, viewResources, element, instruction) {
-  instruction.autocomplete = processAutoComplete(element);
-  return true;
-}), (_class = function () {
+var TaggyComponent = exports.TaggyComponent = (_class = function () {
   TaggyComponent.inject = function inject() {
     return [_aureliaEventAggregator.EventAggregator];
   };
@@ -180,4 +177,4 @@ var TaggyComponent = exports.TaggyComponent = (_dec = processContent(function (v
 }), _descriptor13 = _applyDecoratedDescriptor(_class.prototype, 'autocomplete', [_aureliaFramework.bindable], {
   enumerable: true,
   initializer: null
-}), _applyDecoratedDescriptor(_class, 'inject', [_dec], Object.getOwnPropertyDescriptor(_class, 'inject'), _class)), _class));
+})), _class);
