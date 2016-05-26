@@ -5,7 +5,7 @@ module.exports = {
   root: appRoot,
   source: appRoot + '**/*.js',
   html: appRoot + '**/*.html',
-  taggy: 'jspm_packages/github/collokia/taggy@1.0.1/*.js',
+  taggy: 'jspm_packages/github/collokia/taggy@*/*.js',
   style: 'styles/**/*.css',
   output: outputRoot,
   doc:'./doc',
