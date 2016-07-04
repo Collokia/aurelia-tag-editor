@@ -57,7 +57,7 @@ gulp.task('build-system', function () {
 gulp.task('build', function(callback) {
   return runSequence(
     'clean',
-    ['build-html','copy-taggy', 'copy-styles','build-es2015', 'build-commonjs', 'build-amd', 'build-system'],
+    ['build-html','build-es2015', 'build-commonjs', 'build-amd', 'build-system'],
     callback
   );
 });

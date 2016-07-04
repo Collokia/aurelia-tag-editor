@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['./taggy', 'aurelia-framework', 'aurelia-event-aggregator'], function (_export, _context) {
+System.register(['collokia/taggy', 'aurelia-framework', 'aurelia-event-aggregator'], function (_export, _context) {
   var taggy, bindable, useView, bindingMode, EventAggregator, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, TaggyComponent;
 
   function _initDefineProp(target, property, descriptor, context) {
@@ -53,8 +53,8 @@ System.register(['./taggy', 'aurelia-framework', 'aurelia-event-aggregator'], fu
   }
 
   return {
-    setters: [function (_taggy) {
-      taggy = _taggy.default;
+    setters: [function (_collokiaTaggy) {
+      taggy = _collokiaTaggy.default;
     }, function (_aureliaFramework) {
       bindable = _aureliaFramework.bindable;
       useView = _aureliaFramework.useView;

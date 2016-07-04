@@ -1,4 +1,4 @@
-define(['exports', './taggy', 'aurelia-framework', 'aurelia-event-aggregator'], function (exports, _taggy, _aureliaFramework, _aureliaEventAggregator) {
+define(['exports', 'collokia/taggy', 'aurelia-framework', 'aurelia-event-aggregator'], function (exports, _taggy, _aureliaFramework, _aureliaEventAggregator) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {

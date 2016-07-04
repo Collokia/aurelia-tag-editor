@@ -1,4 +1,4 @@
-import taggy from "./taggy";
+import taggy from "collokia/taggy";
 import {bindable, useView, bindingMode} from 'aurelia-framework';
 import {EventAggregator} from 'aurelia-event-aggregator';
 

@@ -43,7 +43,7 @@ function _initializerWarningHelper(descriptor, context) {
   throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-import taggy from "./taggy";
+import taggy from "collokia/taggy";
 import { bindable, useView, bindingMode } from 'aurelia-framework';
 import { EventAggregator } from 'aurelia-event-aggregator';
 

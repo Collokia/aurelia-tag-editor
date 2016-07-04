@@ -7,7 +7,7 @@ exports.TaggyComponent = undefined;
 
 var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15;
 
-var _taggy = require('./taggy');
+var _taggy = require('collokia/taggy');
 
 var _taggy2 = _interopRequireDefault(_taggy);
 
