@@ -59,13 +59,15 @@
     "registry": "npm",
     "main": "index",
     "format": "amd",
+    "jspmNodeConversion": false,
     "directories": {
       "dist": "dist/amd"
     },
     "dependencies": {
-      "aurelia-polyfills": "^1.0.0-beta.1.1.0",
       "collokia/taggy": "github:collokia/taggy@^1.0.3"
     },
-    "devDependencies": {}
+    "devDependencies": {
+      "aurelia-polyfills": "^1.0.0-beta.1.1.0"
+    }
   }
 }
