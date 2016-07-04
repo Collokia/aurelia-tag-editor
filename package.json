@@ -59,6 +59,7 @@
     "registry": "npm",
     "main": "index",
     "format": "amd",
+    "jspmNodeConversion": false,
     "directories": {
       "dist": "dist/amd"
     },
