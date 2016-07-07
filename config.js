@@ -8,7 +8,7 @@ System.config({
 
   map: {
     "aurelia-polyfills": "npm:aurelia-polyfills@1.0.0-rc.1.0.0",
-    "collokia/taggy": "github:collokia/taggy@1.0.3",
+    "collokia/taggy": "github:collokia/taggy@1.0.4",
     "npm:aurelia-polyfills@1.0.0-rc.1.0.0": {
       "aurelia-pal": "npm:aurelia-pal@1.0.0-rc.1.0.0"
     }

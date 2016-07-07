@@ -64,7 +64,7 @@
       "dist": "dist/amd"
     },
     "dependencies": {
-      "collokia/taggy": "github:collokia/taggy@^1.0.3"
+      "collokia/taggy": "github:collokia/taggy@^1.0.4"
     },
     "devDependencies": {
       "aurelia-polyfills": "^1.0.0-beta.1.1.0"

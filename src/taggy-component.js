@@ -29,6 +29,7 @@ export class TaggyComponent {
         this.values = [];
         this.validValues = [];
         this._publishEvents = true;
+        this.placeholder = "";
     }
 
     _clearValues(){
@@ -81,7 +82,6 @@ export class TaggyComponent {
             deletion: this.deletion,
             ceId: this.ceId,
             eventChannel: this.eventChannel,
-            placeholder: this.placeholder,
             free: this.free,
             delimiter: this.delimiter,
             preventInvalid: this.preventInvalid,

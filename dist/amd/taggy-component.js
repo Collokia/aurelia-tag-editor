@@ -107,6 +107,7 @@ define(['exports', 'collokia/taggy', 'aurelia-framework', 'aurelia-event-aggrega
       this.values = [];
       this.validValues = [];
       this._publishEvents = true;
+      this.placeholder = "";
     }
 
     TaggyComponent.prototype._clearValues = function _clearValues() {
@@ -166,7 +167,6 @@ define(['exports', 'collokia/taggy', 'aurelia-framework', 'aurelia-event-aggrega
         deletion: this.deletion,
         ceId: this.ceId,
         eventChannel: this.eventChannel,
-        placeholder: this.placeholder,
         free: this.free,
         delimiter: this.delimiter,
         preventInvalid: this.preventInvalid,
