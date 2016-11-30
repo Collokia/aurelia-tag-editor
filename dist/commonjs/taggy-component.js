@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.TaggyComponent = undefined;
 
-var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15;
+var _dec, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15;
 
 var _taggy = require('collokia/taggy');
 
@@ -62,7 +62,7 @@ function _initializerWarningHelper(descriptor, context) {
   throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-var TaggyComponent = exports.TaggyComponent = (_class = function () {
+var TaggyComponent = exports.TaggyComponent = (_dec = (0, _aureliaFramework.bindable)({ defaultBindingMode: _aureliaFramework.bindingMode.twoWay }), (_class = function () {
   TaggyComponent.inject = function inject() {
     return [_aureliaEventAggregator.EventAggregator];
   };
@@ -118,27 +118,13 @@ var TaggyComponent = exports.TaggyComponent = (_class = function () {
   };
 
   TaggyComponent.prototype.valuesChanged = function valuesChanged(newValues, oldValues) {
-    var _this2 = this;
 
     this._publishEvents = false;
     if (this.taggyElement) {
-      (function () {
-
-        var newValuesStr = newValues.map(function (it) {
-          return JSON.stringify(it);
-        });
-
-        _this2.taggyElement.value().forEach(function (it) {
-          if (newValuesStr.indexOf(JSON.stringify(it)) < 0) {
-            _this2.taggyElement.removeItem(it);
-          }
-        });
-
-        var currentValsLen = _this2.taggyElement.allValues().length;
-        for (var i = currentValsLen; i < newValues.length; i++) {
-          _this2.taggyElement.addItem(newValues[i]);
-        }
-      })();
+      this._clearValues();
+      for (var i = 0; i < newValues.length; i++) {
+        this.taggyElement.addItem(newValues[i]);
+      }
     }
     this._publishEvents = true;
   };
@@ -158,7 +144,7 @@ var TaggyComponent = exports.TaggyComponent = (_class = function () {
   };
 
   TaggyComponent.prototype._initTaggy = function _initTaggy() {
-    var _this3 = this;
+    var _this2 = this;
 
     this.taggyElement = (0, _taggy2.default)(document.querySelector("#" + this.ceId), {
       deletion: this.deletion,
@@ -177,21 +163,21 @@ var TaggyComponent = exports.TaggyComponent = (_class = function () {
 
     if (typeof this.initialValues !== "undefined" && this.initialValues !== null) {
       this.initialValues.forEach(function (it) {
-        return _this3.taggyElement.addItem(it);
+        return _this2.taggyElement.addItem(it);
       });
     }
 
     if (typeof this.values !== "undefined" && this.values !== null) {
       this.values.forEach(function (it) {
-        return _this3.taggyElement.addItem(it);
+        return _this2.taggyElement.addItem(it);
       });
     }
 
     this.taggyElement.on("add", function (item) {
-      _this3.onSelectedTokensChange();
+      _this2.onSelectedTokensChange();
     });
     this.taggyElement.on("remove", function (item) {
-      _this3.onSelectedTokensChange();
+      _this2.onSelectedTokensChange();
     });
   };
 
@@ -242,7 +228,7 @@ var TaggyComponent = exports.TaggyComponent = (_class = function () {
 }), _descriptor14 = _applyDecoratedDescriptor(_class.prototype, 'autocomplete', [_aureliaFramework.bindable], {
   enumerable: true,
   initializer: null
-}), _descriptor15 = _applyDecoratedDescriptor(_class.prototype, 'values', [_aureliaFramework.bindable], {
+}), _descriptor15 = _applyDecoratedDescriptor(_class.prototype, 'values', [_dec], {
   enumerable: true,
   initializer: null
-})), _class);
+})), _class));

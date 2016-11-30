@@ -17,8 +17,8 @@ export class TaggyComponent {
     @bindable parseValue;
     @bindable parseText;
     @bindable autocomplete;
-  
-    @bindable values;  // for two-way databinding
+
+    @bindable({ defaultBindingMode: bindingMode.twoWay }) values;  // for two-way databinding
 
     static inject() {
         return [EventAggregator]
@@ -44,17 +44,8 @@ export class TaggyComponent {
 
       this._publishEvents = false;
       if(this.taggyElement) {
-
-        const newValuesStr = newValues.map(it => JSON.stringify(it));
-
-        this.taggyElement.value().forEach( it =>{
-          if(newValuesStr.indexOf(JSON.stringify(it)) < 0){
-            this.taggyElement.removeItem(it)
-          }
-        });
-
-        const currentValsLen = this.taggyElement.allValues().length;
-        for(let i = currentValsLen; i < newValues.length;i++){
+        this._clearValues();
+        for(let i = 0; i < newValues.length;i++){
           this.taggyElement.addItem(newValues[i]);
         }
 

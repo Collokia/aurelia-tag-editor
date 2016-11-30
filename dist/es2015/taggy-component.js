@@ -1,4 +1,4 @@
-var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15;
+var _dec, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15;
 
 function _initDefineProp(target, property, descriptor, context) {
   if (!descriptor) return;
@@ -47,7 +47,7 @@ import taggy from "collokia/taggy";
 import { bindable, useView, bindingMode } from 'aurelia-framework';
 import { EventAggregator } from 'aurelia-event-aggregator';
 
-export let TaggyComponent = (_class = class TaggyComponent {
+export let TaggyComponent = (_dec = bindable({ defaultBindingMode: bindingMode.twoWay }), (_class = class TaggyComponent {
 
   static inject() {
     return [EventAggregator];
@@ -103,17 +103,8 @@ export let TaggyComponent = (_class = class TaggyComponent {
 
     this._publishEvents = false;
     if (this.taggyElement) {
-
-      const newValuesStr = newValues.map(it => JSON.stringify(it));
-
-      this.taggyElement.value().forEach(it => {
-        if (newValuesStr.indexOf(JSON.stringify(it)) < 0) {
-          this.taggyElement.removeItem(it);
-        }
-      });
-
-      const currentValsLen = this.taggyElement.allValues().length;
-      for (let i = currentValsLen; i < newValues.length; i++) {
+      this._clearValues();
+      for (let i = 0; i < newValues.length; i++) {
         this.taggyElement.addItem(newValues[i]);
       }
     }
@@ -211,7 +202,7 @@ export let TaggyComponent = (_class = class TaggyComponent {
 }), _descriptor14 = _applyDecoratedDescriptor(_class.prototype, 'autocomplete', [bindable], {
   enumerable: true,
   initializer: null
-}), _descriptor15 = _applyDecoratedDescriptor(_class.prototype, 'values', [bindable], {
+}), _descriptor15 = _applyDecoratedDescriptor(_class.prototype, 'values', [_dec], {
   enumerable: true,
   initializer: null
-})), _class);
+})), _class));

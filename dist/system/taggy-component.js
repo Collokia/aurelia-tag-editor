@@ -1,7 +1,7 @@
 'use strict';
 
 System.register(['collokia/taggy', 'aurelia-framework', 'aurelia-event-aggregator'], function (_export, _context) {
-  var taggy, bindable, useView, bindingMode, EventAggregator, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, TaggyComponent;
+  var taggy, bindable, useView, bindingMode, EventAggregator, _dec, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, TaggyComponent;
 
   function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -63,7 +63,7 @@ System.register(['collokia/taggy', 'aurelia-framework', 'aurelia-event-aggregato
       EventAggregator = _aureliaEventAggregator.EventAggregator;
     }],
     execute: function () {
-      _export('TaggyComponent', TaggyComponent = (_class = function () {
+      _export('TaggyComponent', TaggyComponent = (_dec = bindable({ defaultBindingMode: bindingMode.twoWay }), (_class = function () {
         TaggyComponent.inject = function inject() {
           return [EventAggregator];
         };
@@ -119,27 +119,13 @@ System.register(['collokia/taggy', 'aurelia-framework', 'aurelia-event-aggregato
         };
 
         TaggyComponent.prototype.valuesChanged = function valuesChanged(newValues, oldValues) {
-          var _this2 = this;
 
           this._publishEvents = false;
           if (this.taggyElement) {
-            (function () {
-
-              var newValuesStr = newValues.map(function (it) {
-                return JSON.stringify(it);
-              });
-
-              _this2.taggyElement.value().forEach(function (it) {
-                if (newValuesStr.indexOf(JSON.stringify(it)) < 0) {
-                  _this2.taggyElement.removeItem(it);
-                }
-              });
-
-              var currentValsLen = _this2.taggyElement.allValues().length;
-              for (var i = currentValsLen; i < newValues.length; i++) {
-                _this2.taggyElement.addItem(newValues[i]);
-              }
-            })();
+            this._clearValues();
+            for (var i = 0; i < newValues.length; i++) {
+              this.taggyElement.addItem(newValues[i]);
+            }
           }
           this._publishEvents = true;
         };
@@ -159,7 +145,7 @@ System.register(['collokia/taggy', 'aurelia-framework', 'aurelia-event-aggregato
         };
 
         TaggyComponent.prototype._initTaggy = function _initTaggy() {
-          var _this3 = this;
+          var _this2 = this;
 
           this.taggyElement = taggy(document.querySelector("#" + this.ceId), {
             deletion: this.deletion,
@@ -178,21 +164,21 @@ System.register(['collokia/taggy', 'aurelia-framework', 'aurelia-event-aggregato
 
           if (typeof this.initialValues !== "undefined" && this.initialValues !== null) {
             this.initialValues.forEach(function (it) {
-              return _this3.taggyElement.addItem(it);
+              return _this2.taggyElement.addItem(it);
             });
           }
 
           if (typeof this.values !== "undefined" && this.values !== null) {
             this.values.forEach(function (it) {
-              return _this3.taggyElement.addItem(it);
+              return _this2.taggyElement.addItem(it);
             });
           }
 
           this.taggyElement.on("add", function (item) {
-            _this3.onSelectedTokensChange();
+            _this2.onSelectedTokensChange();
           });
           this.taggyElement.on("remove", function (item) {
-            _this3.onSelectedTokensChange();
+            _this2.onSelectedTokensChange();
           });
         };
 
@@ -243,10 +229,10 @@ System.register(['collokia/taggy', 'aurelia-framework', 'aurelia-event-aggregato
       }), _descriptor14 = _applyDecoratedDescriptor(_class.prototype, 'autocomplete', [bindable], {
         enumerable: true,
         initializer: null
-      }), _descriptor15 = _applyDecoratedDescriptor(_class.prototype, 'values', [bindable], {
+      }), _descriptor15 = _applyDecoratedDescriptor(_class.prototype, 'values', [_dec], {
         enumerable: true,
         initializer: null
-      })), _class));
+      })), _class)));
 
       _export('TaggyComponent', TaggyComponent);
     }
