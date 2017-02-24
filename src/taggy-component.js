@@ -54,14 +54,14 @@ export class TaggyComponent {
     }
 
 
-    onSelectedTokensChange() {
+    onSelectedTokensChange(action, item) {
       if(this._publishEvents){
         this.values = this.taggyElement.allValues();
         this.validValues = this.taggyElement.value();
         
         if(this.eventChannel && this.eventChannel!==""){
 
-          var payload = {tokens: this.values, validTokens: this.validValues };
+          var payload = {tokens: this.values, validTokens: this.validValues, action, item };
           var channel = this.eventChannel;
           this.ea.publish(channel, payload);
         }
@@ -93,10 +93,10 @@ export class TaggyComponent {
         }
         
         this.taggyElement.on("add", (item) => {
-            this.onSelectedTokensChange()
+            this.onSelectedTokensChange("add",item)
         });
         this.taggyElement.on("remove", (item) => {
-            this.onSelectedTokensChange()
+            this.onSelectedTokensChange("remove", item)
         });
 
     }

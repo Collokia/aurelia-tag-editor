@@ -129,14 +129,14 @@ var TaggyComponent = exports.TaggyComponent = (_dec = (0, _aureliaFramework.bind
     this._publishEvents = true;
   };
 
-  TaggyComponent.prototype.onSelectedTokensChange = function onSelectedTokensChange() {
+  TaggyComponent.prototype.onSelectedTokensChange = function onSelectedTokensChange(action, item) {
     if (this._publishEvents) {
       this.values = this.taggyElement.allValues();
       this.validValues = this.taggyElement.value();
 
       if (this.eventChannel && this.eventChannel !== "") {
 
-        var payload = { tokens: this.values, validTokens: this.validValues };
+        var payload = { tokens: this.values, validTokens: this.validValues, action: action, item: item };
         var channel = this.eventChannel;
         this.ea.publish(channel, payload);
       }
@@ -174,10 +174,10 @@ var TaggyComponent = exports.TaggyComponent = (_dec = (0, _aureliaFramework.bind
     }
 
     this.taggyElement.on("add", function (item) {
-      _this2.onSelectedTokensChange();
+      _this2.onSelectedTokensChange("add", item);
     });
     this.taggyElement.on("remove", function (item) {
-      _this2.onSelectedTokensChange();
+      _this2.onSelectedTokensChange("remove", item);
     });
   };
 
